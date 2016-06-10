@@ -1,0 +1,205 @@
+##This is not the original version of PSIMETRICA, but
+##rather a simple edit distance with differential costs.
+
+
+                     ## Phoneme Example Translation
+#        ------- ------- -----------
+#        AA	odd     AA D ah
+##      AE	at	AE T
+#        AH	hut	HH AH T
+#        AO	ought	AO T
+#        AW	cow	K AW
+#        AY	hide	HH AY D
+#        B 	be	B IY
+#        CH	cheese	CH IY Z
+#        D 	dee	D IY
+#        DH	thee	DH IY
+#        EH	Ed	EH D
+#        ER	hurt	HH ER T
+#        EY	ate	EY T
+#        F 	fee	F IY
+#        G 	green	G R IY N
+#        HH	he	HH IY
+#        IH	it	IH T
+#        IY	eat	IY T
+#        JH	gee	JH IY
+#        K 	key	K IY
+#        L 	lee	L IY
+#        M 	me	M IY
+#       N 	knee	N IY
+#        NG	ping	P IH NG
+#        OW	oat	OW T
+#        OY	toy	T OY
+#        P 	pee	P IY
+#        R 	read	R IY D
+#        S 	sea	S IY
+#        SH	she	SH IY
+#        T 	tea	T IY
+#        TH	theta	TH EY T AH
+#        UH	hood	HH UH D
+#        UW	two	T UW
+#        V 	vee	V IY
+#        W 	we	W IY
+#        Y 	yield	Y IY L D
+#        Z 	zee	Z IY
+#        ZH	seizure	S IY ZH ER
+
+##Now read in the phonological symbols and their feature codings.
+
+## ##phonemes <- c(((i1  (+ - + - - - - - + x x x x))
+##                         (i2  (+ - + + - - - - + x x x x))
+##                         (u1  (+ - + + - - - + + x x x x))
+##                         (e1  (+ - - - - - - - + x x x x))
+##                         (o1  (+ - - + - - - + + x x x x))
+##                         (ae1 (+ - - - + - - - + x x x x))
+##                         (a+  (+ - - + + - - - + x x x x))
+##                         (-ee (+ - - - + - - + + x x x x))
+##                         (-e  (+ - - + + - - + + x x x x))
+##                         (i3  (+ - + - - - - - - x x x x))
+##                         (u2  (+ - + + - - - + - x x x x))
+##                         (e2  (+ - - - - - - - - x x x x))
+##                         (u3  (+ - - + - - - - - x x x x))
+##                         (o2  (+ - - + - - - + - x x x x))
+##                         (ae2 (+ - - - + - - - - x x x x))
+##                         (-e2 (+ - - + + - - + - x x x x))
+##                         (y   (- - + - - - - - - x x x x))
+##                         (w   (- - + + - - - + - x x x x))
+##                         (eps (- - - - - - - - - x x x x))
+##                         (r   (+ + - - - - + x x + + - -))
+##                         (l   (+ + - - - + + x x + + - -))
+##                         (p   (- + - - - + - x x - - - -))
+##                         (b   (- + - - - + - x x + - - -))
+##                         (f   (- + - - - + - x x - + - +))
+##                         (v   (- + - - - + - x x + + - +))
+##                         (m   (- + - - - + - x x + - + -))
+##                         (t   (- + - - - + + x x - - - -))
+##                         (d   (- + - - - + + x x + - - -))
+##                         (th  (- + - - - + + x x - + - -))
+##                         (thz (- + - - - + + x x + + - -))
+##                         (n   (- + - - - + + x x + - + -))
+##                         (s   (- + - - - + + x x - + - +))
+##                         (z   (- + - - - + + x x + + - +))
+##                         (c   (- + - - - + + x x - - - +))
+##                         (cc  (- + + - - - + x x - - - +))
+##                         (jj  (- + + - - - + x x + - - +))
+##                         (ss  (- + + - - - + x x - + - +))
+##                         (zz  (- + + - - - + x x + + - +))
+##                         (k   (- + + + - - - - x - - - -))
+##                         (g   (- + + + - - - - x + - - -))
+##                         (x   (- + + + - - - - x - + - -))
+##                         (ng  (- + + + - - - x x + - + -))
+##                         (h   (- - - - + - - x x - + - -))
+##                         (kw  (- + + + - - - + x - - - -))
+##                         (gw  (- + + + - - - + x + - - -))
+##                         (xw  (- + + + - - - + x - + - -))
+
+
+##                         ))
+
+
+## ;;;==========================================================================
+## ;;;        *phonemes* contains the sub-symbolic description of phonemes
+## ;;;==========================================================================
+## ;;;This data is derived from chart on pages 176-177 of
+## ;;;_The Sound Pattern of English_, Noam Chomsky, 1968.
+## ;;;The first 2-3 letter code is the phoneme label, and the rest
+## ;;;of the vector represents the speech features that characterize
+## ;;;that phoneme.  They are, in order:  vocalic, consonantal, high, back,low,
+## ;;;anterior, coronal, round, tense, voice, continuant, nasal, strident.
+## ;;;As Chomsky notes, anterior and coronal replace labial, dental, paleto-alveolar, and velar
+## ;;;The Xs represent unspecified values.  For the moment, they remain unspecified,
+## ;;;but could be determined given phonologic rules and specific words.
+
+## (defvar *phonemes-nc* '((i1  (+ - + - - - - - + x x x x))
+##                         (i2  (+ - + + - - - - + x x x x))
+##                         (u1  (+ - + + - - - + + x x x x))
+##                         (e1  (+ - - - - - - - + x x x x))
+##                         (o1  (+ - - + - - - + + x x x x))
+##                         (ae1 (+ - - - + - - - + x x x x))
+##                         (a+  (+ - - + + - - - + x x x x))
+##                         (-ee (+ - - - + - - + + x x x x))
+##                         (-e  (+ - - + + - - + + x x x x))
+##                         (i3  (+ - + - - - - - - x x x x))
+##                         (u2  (+ - + + - - - + - x x x x))
+##                         (e2  (+ - - - - - - - - x x x x))
+##                         (u3  (+ - - + - - - - - x x x x))
+##                         (o2  (+ - - + - - - + - x x x x))
+##                         (ae2 (+ - - - + - - - - x x x x))
+##                         (-e2 (+ - - + + - - + - x x x x))
+##                         (y   (- - + - - - - - - x x x x))
+##                         (w   (- - + + - - - + - x x x x))
+##                         (eps (- - - - - - - - - x x x x))
+##                         (r   (+ + - - - - + x x + + - -))
+##                         (l   (+ + - - - + + x x + + - -))
+##                         (p   (- + - - - + - x x - - - -))
+##                         (b   (- + - - - + - x x + - - -))
+##                         (f   (- + - - - + - x x - + - +))
+##                         (v   (- + - - - + - x x + + - +))
+##                         (m   (- + - - - + - x x + - + -))
+##                         (t   (- + - - - + + x x - - - -))
+##                         (d   (- + - - - + + x x + - - -))
+##                         (th  (- + - - - + + x x - + - -))
+##                         (thz (- + - - - + + x x + + - -))
+##                         (n   (- + - - - + + x x + - + -))
+##                         (s   (- + - - - + + x x - + - +))
+##                         (z   (- + - - - + + x x + + - +))
+##                         (c   (- + - - - + + x x - - - +))
+##                         (cc  (- + + - - - + x x - - - +))
+##                         (jj  (- + + - - - + x x + - - +))
+##                         (ss  (- + + - - - + x x - + - +))
+##                         (zz  (- + + - - - + x x + + - +))
+##                         (k   (- + + + - - - - x - - - -))
+##                         (g   (- + + + - - - - x + - - -))
+##                         (x   (- + + + - - - - x - + - -))
+##                         (ng  (- + + + - - - x x + - + -))
+##                         (h   (- - - - + - - x x - + - -))
+##                         (kw  (- + + + - - - + x - - - -))
+##                         (gw  (- + + + - - - + x + - - -))
+##                         (xw  (- + + + - - - + x - + - -))
+
+
+##                         ))
+#
+#                    symbol  feature-vector                IPA symbol......MRC.......Example
+#(defvar *phonemes*    '((ee  (+ - + - - - - - + x x x x))  ;lower-case i...i.........steam
+#                        (i   (+ - + - - - - - - x x x x))  ;block i........I.........pits
+#                        (a_  (+ - - - - - - - + x x x x))  ;e..............eI........late
+#                        (e   (+ - - - - - - - - x x x x))  ;epsilon........e.........mess
+#                        (ae  (+ - - - + - - - + x x x x))  ;ae.............&.........fat
+#                        (u   (+ - + + - - - - - x x x x))  ;ibar........... .........just
+#                        (@   (+ - - + - - - - - x x x x))  ;inverse e...... .........burn, eatEn, Above
+#                        (uu  (+ - - + + - - - - x x x x))  ;inverse v......V.........rUbber,abOve
+#                        (ah  (+ - - + + - - - + x x x x))  ;a..............A.........hAlf
+#                        (u_  (+ - + + - - - + + x x x x))  ;u..............u.........crUise
+#                        (oo  (+ - + + - - - + - x x x x))  ;block U........U.........cOOk
+#                        (o_  (+ - - + - - - + + x x x x))  ;o..............O.........cOAt
+#                        (aw  (+ - - + + - - + - x x x x))  ;backwards c....0 (zero)..bAWl
+#                        (y   (- - + - - - - - - x x x x))  ;j..............j.........Yell
+#                        (w   (- - + + - - - + - x x x x))  ;w..............w.........Wool
+#                        (r   (+ + - - - - + x x + + - -))  ;r..............r.........Rat
+#                        (l   (+ + - - - + + x x + + - -))  ;l..............l.........Loin
+#                        (h   (- - - - + - - x x - + - -))  ;h..............h.........Hot
+#                        (p   (- + - - - + - x x - - - -))  ;p..............p.........Pot
+#                        (b   (- + - - - + - x x + - - -))  ;b..............b.........But
+#                        (t   (- + - - - + + x x - - - -))  ;t..............t.........Top
+#                        (d   (- + - - - + + x x + - - -))  ;d..............d.........Dog
+#                        (ch  (- + + - - - + x x - - - +))  ;tSigma.........tS........CHurCH
+#                        (j   (- + + - - - + x x + - - +))  ;d3.............dZ........Jowls
+#                        (k   (- + + + - - - - x - - - -))  ;k..............k.........Cramp
+#                        (g   (- + + + - - - - x + - - -))  ;g..............g.........Goon
+#                        (f   (- + - - - + - x x - + - +))  ;f..............f.........Feeler
+#                        (v   (- + - - - + - x x + + - +))  ;v..............v.........Vain
+#                        (th  (- + - - - + + x x - + - -))  ;theta..........T.........THought
+#                        (thz (- + - - - + + x x + + - -))  ;delta..........D.........THis
+#                        (s   (- + - - - + + x x - + - +))  ;s..............s.........Sign
+#                        (z   (- + - - - + + x x + + - +))  ;z..............z.........Zircon
+#                        (sh  (- + + - - - + x x - + - +))  ;sigma..........S.........SHeet
+                                        #                        (zh  (- + + - - - + x x + + - +))  ;3..............Z.........viSIon
+#                        (m   (- + - - - + - x x + - + -))  ;m..............m.........MiMe
+#                        (n   (- + - - - + + x x + - + -))  ;n..............n.........Numb
+#                        (ng  (- + + + - - - x x + - + -))  ;eta............9.........youNG
+#                        (X   (1 1 1 1 1 1 1 1 1 1 1 1 1))  ;default placeholder
+#                        (XX  (0 0 0 0 0 0 0 0 0 0 0 0 0))  ;default nil phoneme
+#                        ;total:  37 phonemes +2 placeholder
+#                        ))
+

@@ -1,0 +1,101 @@
+Exp,wordid,standard,comparison,standardPH,compPH,vwpred,data
+1,1,sit,wage,S IH1 T,W EY1 JH,1.00,0.15
+1,2,sit,rule,S IH1 T,R UW1 L,1.00,0.24
+1,3,sit,keys,S IH1 T,K IY1 Z,1.00,0.45
+1,4,sit,end,S IH1 T,EH1 N D,1.00,0.56
+1,5,sit,take,S IH1 T,T EY1 K,0.80,0.35
+1,6,sit,tall,S IH1 T,T AO1 L,0.80,0.39
+1,7,sit,dose,S IH1 T,D OW1 S,0.80,0.53
+1,8,sit,tass,S IH1 T,T AE1 S,0.80,0.77
+1,9,sit,toss,S IH1 T,T AO1 S,0.80,0.83
+1,10,sit,mess,S IH1 T,M EH1 S,0.80,1.09
+1,11,sit,imp,S IH1 T,IH1 M P,0.75,1.18
+1,12,sit,feet,S IH1 T,F IY1 T,0.67,0.80
+1,13,sit,chin,S IH1 T,CH IH1 N,0.67,1.07
+1,14,sit,but,S IH1 T,B AH1 T,0.67,1.18
+1,15,sit,live,S IH1 T,L IH1 V,0.67,1.20
+1,16,sit,song,S IH1 T,S AO1 NG,0.67,1.23
+1,17,sit,tin,S IH1 T,T IH1 N,0.67,1.27
+1,18,sit,this,S IH1 T,DH IH1 S,0.67,1.49
+1,19,sit,miss,S IH1 T,M IH1 S,0.67,1.66
+1,20,sit,its,S IH1 T,IH1 T S,0.50,2.40
+1,21,sit,sat,S IH1 T,S AE1 T,0.33,2.34
+1,22,sit,set,S IH1 T,S EH1 T,0.33,2.86
+1,23,sit,sick,S IH1 T,S IH1 K,0.33,2.89
+1,24,sit,pit,S IH1 T,P IH1 T,0.33,3.10
+1,25,sit,hit,S IH1 T,HH IH1 T,0.33,3.16
+2,1,plant,screech,P L AE1 N T,S K R IY1 CH,1.00,0.11
+2,2,plant,bricks,P L AE1 N T,B R IH1 K S,1.00,0.15
+2,3,plant,crowd,P L AE1 N T,K R AW1 D,1.00,0.18
+2,4,plant,waves,P L AE1 N T,W EY1 V Z,1.00,0.18
+2,5,plant,harmed,P L AE1 N T,HH AA1 R M D,1.00,0.42
+2,6,plant,limps,P L AE1 N T,L IH1 M P S,0.83,0.32
+2,7,plant,drink,P L AE1 N T,D R IH1 NG K,0.80,0.28
+2,8,plant,smart,P L AE1 N T,S M AA1 R T,0.80,0.75
+2,9,plant,blamed,P L AE1 N T,B L EY1 M D,0.80,1.01
+2,10,plant,parks,P L AE1 N T,P AA1 R K S,0.80,1.27
+2,11,plant,grams,P L AE1 N T,G R AE1 M Z,0.80,1.79
+2,12,plant,cramp,P L AE1 N T,K R AE1 M P,0.80,2.37
+2,13,plant,flushed,P L AE1 N T,F L AH1 SH T,0.60,0.29
+2,14,plant,blond,P L AE1 N T,B L AA1 N D,0.60,0.90
+2,15,plant,pierced,P L AE1 N T,P IH1 R S T,0.60,0.98
+2,16,plant,stand,P L AE1 N T,S T AE1 N D,0.60,1.51
+2,17,plant,plots,P L AE1 N T,P L AA1 T S,0.60,1.79
+2,18,plant,split,P L AE1 N T,S P L IH1 T,0.50,0.80
+2,19,plant,prank,P L AE1 N T,P R AE1 NG K,0.40,1.85
+2,20,plant,grant,P L AE1 N T,G R AE1 N T,0.40,3.43
+2,21,plant,plast,P L AE1 N T,P L AE1 S T,0.20,2.27
+2,22,plant,plint,P L AE1 N T,P L IH1 N T,0.20,2.28
+2,23,plant,plans,P L AE1 N T,P L AE1 N Z,0.20,2.84
+2,24,plant,prant,P L AE1 N T,P R AE1 N T,0.20,3.39
+2,25,plant,slant,P L AE1 N T,S L AE1 N T,0.20,3.49
+3,1,wonder,sickles,W AH1 N D ER0,S IH1 K AH0 L Z,1.00,0.04
+3,2,wonder,tossing,W AH1 N D ER0,T AO1 S IH0 NG,1.00,0.06
+3,3,wonder,locket,W AH1 N D ER0,L AA1 K IH0 T,1.00,0.10
+3,4,wonder,raising,W AH1 N D ER0,R EY1 Z IH0 NG,1.00,0.16
+3,5,wonder,rapid,W AH1 N D ER0,R AE1 P AH0 D,1.00,0.18
+3,6,wonder,chinning,W AH1 N D ER0,CH IH1 N IH0 NG,0.80,0.01
+3,7,wonder,bucket,W AH1 N D ER0,B AH1 K IH0 T,0.80,0.14
+3,8,wonder,cradel,W AH1 N D ER0,K R EY1 D AH0 L,0.80,0.16
+3,9,wonder,willows,W AH1 N D ER0,W IH1 L OW2 Z,0.80,1.20
+3,10,wonder,member,W AH1 N D ER0,M EH1 M B ER0,0.80,1.57
+3,11,wonder,colors,W AH1 N D ER0,K AH1 L ER0 Z,0.67,0.71
+3,12,wonder,handle,W AH1 N D ER0,HH AE1 N D AH0 L,0.60,0.53
+3,13,wonder,butler,W AH1 N D ER0,B AH1 T L ER0,0.60,0.96
+3,14,wonder,danger,W AH1 N D ER0,D EY1 N JH ER0,0.60,1.28
+3,15,wonder,widows,W AH1 N D ER0,W IH1 D OW0 Z,0.60,1.29
+3,16,wonder,bundle,W AH1 N D ER0,B AH1 N D AH0 L,0.40,1.36
+3,17,wonder,tender,W AH1 N D ER0,T EH1 N D ER0,0.40,2.05
+3,18,wonder,windle,W AH1 N D ER0,W IH1 N D AH0 L,0.40,2.05
+3,19,wonder,welder,W AH1 N D ER0,W EH1 L D ER0,0.40,2.38
+3,20,wonder,winter,W AH1 N D ER0,W IH1 N T ER0,0.40,2.64
+3,21,wonder,wuzder,W AH1 N D ER0,W AH1 Z D ER0,0.20,2.69
+3,22,wonder,wundle,W AH1 N D ER0,W AH1 N D AH0 L,0.20,2.91
+3,23,wonder,wander,W AH1 N D ER0,W AA1 N D ER0,0.20,3.56
+3,24,wonder,sunder,W AH1 N D ER0,S AH1 N D ER0,0.20,3.59
+3,25,wonder,wunter,W AH1 N D ER0,W AH1 N T ER0,0.20,3.63
+4,1,relation,get,R IY0 L EY1 SH AH0 N,G EH1 T,1.00,0.35
+4,2,relation,asthmatic,R IY0 L EY1 SH AH0 N,AE0 Z M AE1 T IH0 K,1.00,0.36
+4,3,relation,deters,R IY0 L EY1 SH AH0 N,D IH0 T ER1 Z,1.00,0.40
+4,4,relation,hesitate,R IY0 L EY1 SH AH0 N,HH EH1 Z AH0 T EY2 T,0.89,0.52
+4,5,relation,fascinating,R IY0 L EY1 SH AH0 N,F AE1 S AH0 N EY2 T IH0 NG,0.89,0.75
+4,6,relation,sun,R IY0 L EY1 SH AH0 N,S AH1 N,0.86,0.41
+4,7,relation,effect,R IY0 L EY1 SH AH0 N,IH0 F EH1 K T,0.86,0.48
+4,8,relation,become,R IY0 L EY1 SH AH0 N,B IH0 K AH1 M,0.86,0.73
+4,9,relation,rich,R IY0 L EY1 SH AH0 N,R IH1 CH,0.86,0.87
+4,10,relation,legislates,R IY0 L EY1 SH AH0 N,L EH1 JH IH0 S L EY2 T S,0.80,1.23
+4,11,relation,mechanic,R IY0 L EY1 SH AH0 N,M AH0 K AE1 N IH0 K,0.78,0.66
+4,12,relation,underwritten,R IY0 L EY1 SH AH0 N,AH1 N D ER0 R IH2 T AH0 N,0.73,1.47
+4,13,relation,pain,R IY0 L EY1 SH AH0 N,P EY1 N,0.71,0.73
+4,14,relation,lash,R IY0 L EY1 SH AH0 N,L AE1 SH,0.71,0.80
+4,15,relation,rush,R IY0 L EY1 SH AH0 N,R AH1 SH,0.71,1.12
+4,16,relation,repel,R IY0 L EY1 SH AH0 N,R IH0 P EH1 L,0.67,1.36
+4,17,relation,inhibition,R IY0 L EY1 SH AH0 N,IH2 N HH AH0 B IH1 SH AH0 N,0.67,1.59
+4,18,relation,emotions,R IY0 L EY1 SH AH0 N,IH0 M OW1 SH AH0 N Z,0.63,1.62
+4,19,relation,resolution,R IY0 L EY1 SH AH0 N,R EH2 Z AH0 L UW1 SH AH0 N,0.55,2.38
+4,20,relation,laceration,R IY0 L EY1 SH AH0 N,L AE2 S ER0 EY1 SH AH0 N,0.50,2.59
+4,21,relation,revision,R IY0 L EY1 SH AH0 N,R IY0 V IH1 ZH AH0 N,0.43,2.11
+4,22,relation,relate,R IY0 L EY1 SH AH0 N,R IH0 L EY1 T,0.43,2.68
+4,23,relation,location,R IY0 L EY1 SH AH0 N,L OW0 K EY1 SH AH0 N,0.43,2.84
+4,24,relation,ration,R IY0 L EY1 SH AH0 N,R AE1 SH AH0 N,0.29,2.98
+4,25,relation,belation,R IY0 L EY1 SH AH0 N,B IH0 L EY1 SH AH0 N,0.14,3.33
